@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, Niccaa 🎂</title>
+  <meta name="description" content="A dreamy, soft & luxurious birthday celebration for the wonderful Niccaa — wishing you joy, peace, and beautiful moments." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient Animated Background Canvas (Shooting stars, Sparkles) -->
+  <canvas id="starCanvas"></canvas>
+  <canvas id="confettiCanvas"></canvas>
+  <canvas id="fireworkCanvas"></canvas>
+
+  <!-- Floating Cherry Blossom Petals & Butterflies Containers -->
+  <div id="blossomContainer" aria-hidden="true"></div>
+  <div id="butterflyContainer" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════ SCREEN 1 — WELCOME -->
+  <section id="screen-welcome" class="screen active">
+    <div class="particles-container" id="particles"></div>
+
+    <div class="welcome-content">
+      <div class="crown-icon" aria-hidden="true">👑</div>
+
+      <h1 class="welcome-title">
+        Happy Birthday,<br />
+        <span class="name-gradient">Niccaa</span>
+        <span class="birthday-emoji">🎂</span>
+      </h1>
+
+      <div class="welcome-taglines">
+        <p class="tagline" id="tagline1">"Some people don't need to try to be special."</p>
+        <p class="tagline" id="tagline2">"They simply are."</p>
+        <p class="tagline" id="tagline3">"And today is all about celebrating you."</p>
+      </div>
+
+      <button id="openWishBtn" class="glow-btn" aria-label="Open Your Birthday Wish">
+        <span class="btn-icon" aria-hidden="true">✉️</span>
+        <span class="btn-text">Open Your Birthday Wish</span>
+        <span class="btn-glow-effect" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ ENVELOPE MODAL / OVERLAY -->
+  <div id="envelopeOverlay" class="envelope-overlay" aria-hidden="true">
+    <div class="envelope-wrapper">
+      <div class="envelope" id="envelope">
+        <div class="envelope-back"></div>
+        <div class="envelope-flap" id="envelopeFlap"></div>
+        <div class="letter" id="envelopeLetter">
+          <div class="letter-content">
+            <span class="letter-stamp">🌸</span>
+            <h3>Dear Niccaa,</h3>
+            <p>Your special birthday letter is unfolding...</p>
+            <div class="letter-decor">✨ 💕 ✨</div>
+          </div>
+        </div>
+        <div class="envelope-pocket"></div>
+        <div class="envelope-seal" id="envelopeSeal">💌</div>
+      </div>
+      <p class="envelope-hint">Unfolding your birthday wish...</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ SCREEN 2 — CELEBRATION -->
+  <section id="screen-celebration" class="screen">
+
+    <!-- Message Card -->
+    <div class="section-block" id="messageSection">
+      <div class="section-label">✦ A Message For You ✦</div>
+      <div class="glass-card message-card" id="messageCard">
+        <div class="card-shimmer" aria-hidden="true"></div>
+        <div class="card-inner">
+          <p class="salutation">Dear <span class="name-gradient">Niccaa</span>,</p>
+          <p class="card-line">Today is your special day.</p>
+          <p class="card-line">May this birthday bring you happiness that lasts, peace that comforts you, strength to overcome every challenge, and success in everything you dream of.</p>
+          <p class="card-line">Keep smiling, keep believing in yourself, and never stop being the amazing person you are.</p>
+          <p class="card-line">May the coming year be filled with beautiful memories, wonderful opportunities, and countless reasons to smile.</p>
+          <p class="card-closing">Happy Birthday and have an amazing year ahead. 🌟</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wish Cards -->
+    <div class="section-block" id="wishSection">
+      <div class="section-label">✦ Birthday Wishes ✦</div>
+      <div class="wish-grid" id="wishGrid">
+        <div class="wish-card wish-happiness">
+          <div class="wish-icon">✨</div>
+          <div class="wish-label">Happiness</div>
+          <div class="wish-desc">May joy surround you always</div>
+        </div>
+        <div class="wish-card wish-peace">
+          <div class="wish-icon">🌸</div>
+          <div class="wish-label">Peace</div>
+          <div class="wish-desc">Serenity in every moment</div>
+        </div>
+        <div class="wish-card wish-health">
+          <div class="wish-icon">💙</div>
+          <div class="wish-label">Good Health</div>
+          <div class="wish-desc">Vitality and wellness</div>
+        </div>
+        <div class="wish-card wish-success">
+          <div class="wish-icon">🌟</div>
+          <div class="wish-label">Success</div>
+          <div class="wish-desc">Every dream realized</div>
+        </div>
+        <div class="wish-card wish-memories">
+          <div class="wish-icon">🎉</div>
+          <div class="wish-label">Beautiful Memories</div>
+          <div class="wish-desc">Moments to treasure forever</div>
+        </div>
+        <div class="wish-card wish-smiles">
+          <div class="wish-icon">😊</div>
+          <div class="wish-label">Endless Smiles</div>
+          <div class="wish-desc">Laughter every single day</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Birthday Cake -->
+    <div class="section-block" id="cakeSection">
+      <div class="section-label">✦ Make a Wish ✦</div>
+      <div class="cake-container" id="cakeContainer" role="button" tabindex="0" aria-label="Click the cake to celebrate!">
+        <div class="cake-hint" id="cakeHint">Click the cake to celebrate! 🎂</div>
+        <div class="cake-wrapper" id="cakeWrapper">
+
+          <!-- Candles -->
+          <div class="candles-row">
+            <div class="candle"><div class="candle-body"></div><div class="flame-wrap"><div class="flame"></div><div class="flame-inner"></div></div></div>
+            <div class="candle"><div class="candle-body"></div><div class="flame-wrap"><div class="flame"></div><div class="flame-inner"></div></div></div>
+            <div class="candle"><div class="candle-body"></div><div class="flame-wrap"><div class="flame"></div><div class="flame-inner"></div></div></div>
+            <div class="candle"><div class="candle-body"></div><div class="flame-wrap"><div class="flame"></div><div class="flame-inner"></div></div></div>
+            <div class="candle"><div class="candle-body"></div><div class="flame-wrap"><div class="flame"></div><div class="flame-inner"></div></div></div>
+          </div>
+
+          <!-- Cake Tiers -->
+          <div class="cake-top"><div class="cake-top-deco">✦ Niccaa ✦</div></div>
+          <div class="cake-middle"><div class="cake-dots"></div></div>
+          <div class="cake-bottom"><div class="cake-base-plate"></div></div>
+        </div>
+        <div class="sparkles-container" id="sparklesContainer" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <!-- Final Screen -->
+    <div class="section-block final-section" id="finalSection">
+      <div class="final-quote">"The world became a little brighter<br />the day you were born."</div>
+      <div class="final-title">Happy Birthday, <span class="name-gradient">Niccaa</span>.</div>
+      <div class="final-subtitle">Have the most wonderful year ahead. ✨</div>
+      <div class="final-hearts" aria-hidden="true">
+        <span>💖</span><span>🌸</span><span>🌟</span><span>💕</span><span>✨</span>
+      </div>
+    </div>
+
+  </section>
+
+  <audio id="bgMusic" loop preload="none"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
