@@ -281,7 +281,7 @@ function openEnvelopeSequence() {
 const music = document.getElementById("bgMusic");
 
 if (music) {
-    music.volume = 0.4;
+    music.volume = 0.5;
     music.play().catch(() => {});
 }
   // Show Envelope Overlay
