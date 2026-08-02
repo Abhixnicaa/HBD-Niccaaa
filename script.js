@@ -278,7 +278,12 @@ function updateFireworks() {
    ──────────────────────────────────────────────────────────────── */
 function openEnvelopeSequence() {
   openWishBtn.disabled = true;
+const music = document.getElementById("bgMusic");
 
+if (music) {
+    music.volume = 0.4;
+    music.play().catch(() => {});
+}
   // Show Envelope Overlay
   envelopeOverlay.classList.add('active');
 
